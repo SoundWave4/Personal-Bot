@@ -1,0 +1,14 @@
+/*
+ * App-level layout
+ * Uses flexbox to keep footer at the bottom of the viewport.
+ */
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
