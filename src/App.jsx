@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import CookieBanner from './components/CookieBanner/CookieBanner';
 import HomePage from './pages/HomePage';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
@@ -18,6 +19,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <CookieBanner />
     </>
   );
 }

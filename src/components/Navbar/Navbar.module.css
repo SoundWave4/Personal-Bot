@@ -1,0 +1,221 @@
+/* Navbar — sticky top navigation with scroll-aware background */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-xl);
+  background-color: transparent;
+  transition: background-color var(--duration-normal) var(--ease-default),
+              border-color var(--duration-normal) var(--ease-default),
+              box-shadow var(--duration-normal) var(--ease-default);
+  border-bottom: 1px solid transparent;
+}
+
+.navScrolled {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Logo */
+.logo {
+  font-weight: 700;
+  font-size: var(--font-xl);
+  color: var(--text-primary);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo:hover {
+  color: var(--accent-blue);
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+/* Desktop nav links */
+.desktopLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.navLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  transition: color var(--duration-fast) var(--ease-default);
+  white-space: nowrap;
+  position: relative;
+  padding: var(--space-xs) 0;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-blue);
+  transition: width var(--duration-normal) var(--ease-default);
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLinkActive {
+  color: var(--accent-blue);
+}
+
+.navLinkActive::after {
+  width: 100%;
+}
+
+/* Language toggle pill */
+.langToggle {
+  display: flex;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.langOption {
+  padding: var(--space-xs) var(--space-sm);
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-default),
+              color var(--duration-fast) var(--ease-default);
+  font-family: var(--font-family);
+  line-height: 1;
+}
+
+.langOption:hover {
+  color: var(--text-primary);
+}
+
+.langActive {
+  background: var(--accent-blue);
+  color: var(--text-primary);
+}
+
+/* Hamburger button (mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.hamburgerLine {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 1px;
+  transition: transform var(--duration-normal) var(--ease-default),
+              opacity var(--duration-fast) var(--ease-default);
+}
+
+/* Hamburger open state X animation */
+.hamburgerOpen .hamburgerLine:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile controls: lang toggle + hamburger */
+.mobileControls {
+  display: none;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* Mobile fullscreen overlay */
+.mobileOverlay {
+  display: none;
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-primary);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xl);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity var(--duration-normal) var(--ease-default),
+              transform var(--duration-normal) var(--ease-default);
+}
+
+.mobileOverlayOpen {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobileNavLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: var(--font-2xl);
+  font-weight: 600;
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+.mobileNavLink:hover {
+  color: var(--accent-blue);
+}
+
+.mobileNavLinkActive {
+  color: var(--accent-blue);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 var(--space-md);
+  }
+
+  .desktopLinks {
+    display: none;
+  }
+
+  .mobileControls {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

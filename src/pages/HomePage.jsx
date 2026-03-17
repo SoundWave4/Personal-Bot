@@ -1,28 +1,28 @@
+import Hero from '../components/Hero/Hero';
+
 function HomePage() {
   return (
     <>
-      <section id="hero">
-        {/* Hero component */}
-      </section>
+      <Hero />
 
       <section id="services">
-        {/* Services component */}
+        {/* Services component — Task 3 */}
       </section>
 
       <section id="how-it-works">
-        {/* HowItWorks component */}
+        {/* HowItWorks component — Task 3 */}
       </section>
 
       <section id="chatbot-demo">
-        {/* ChatbotDemo component */}
+        {/* ChatbotDemo component — Task 5 */}
       </section>
 
       <section id="about">
-        {/* About component */}
+        {/* About component — Task 3 */}
       </section>
 
       <section id="contact">
-        {/* Contact component */}
+        {/* Contact component — Task 4 */}
       </section>
     </>
   );

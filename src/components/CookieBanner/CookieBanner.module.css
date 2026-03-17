@@ -1,0 +1,81 @@
+/* CookieBanner — fixed bottom bar for DSGVO compliance */
+
+.banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  background-color: rgba(30, 37, 56, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--space-md) var(--space-xl);
+  animation: slideUp var(--duration-normal) var(--ease-default);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  gap: var(--space-lg);
+}
+
+.text {
+  color: var(--text-secondary);
+  font-size: var(--font-sm);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.acceptBtn {
+  flex-shrink: 0;
+  padding: var(--space-xs) var(--space-lg);
+  background-color: var(--accent-blue);
+  color: var(--text-primary);
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-default),
+              box-shadow var(--duration-fast) var(--ease-default);
+  white-space: nowrap;
+}
+
+.acceptBtn:hover {
+  background-color: var(--accent-blue-hover);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+/* Responsive: mobile */
+@media (max-width: 768px) {
+  .banner {
+    padding: var(--space-md);
+  }
+
+  .content {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .banner {
+    animation: none;
+  }
+}

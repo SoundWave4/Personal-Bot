@@ -1,0 +1,186 @@
+/* Hero — full-viewport entrance section with animated gradient background */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xl) var(--space-xl);
+  overflow: hidden;
+}
+
+/* Animated gradient mesh background */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 50%);
+  animation: gradientDrift 20s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gradientDrift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(2%, -1%) rotate(1deg);
+  }
+  100% {
+    transform: translate(-1%, 2%) rotate(-1deg);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+.title {
+  font-size: var(--font-5xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.15;
+  margin: 0;
+  opacity: 0;
+  animation: fadeInUp var(--duration-slow) var(--ease-default) 0.3s forwards;
+}
+
+.subtitle {
+  font-size: var(--font-lg);
+  color: var(--text-secondary);
+  margin-top: var(--space-lg);
+  line-height: 1.6;
+  max-width: 600px;
+  opacity: 0;
+  animation: fadeInUp var(--duration-slow) var(--ease-default) 0.5s forwards;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
+  opacity: 0;
+  animation: fadeInUp var(--duration-slow) var(--ease-default) 0.7s forwards;
+}
+
+/* Shared button base */
+.ctaPrimary,
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-xl);
+  font-size: var(--font-base);
+  font-weight: 600;
+  font-family: var(--font-family);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--duration-fast) var(--ease-default),
+              box-shadow var(--duration-fast) var(--ease-default),
+              border-color var(--duration-fast) var(--ease-default),
+              transform var(--duration-fast) var(--ease-default);
+  white-space: nowrap;
+}
+
+.ctaPrimary {
+  background-color: var(--accent-blue);
+  color: var(--text-primary);
+  border: 1px solid var(--accent-blue);
+}
+
+.ctaPrimary:hover {
+  background-color: var(--accent-blue-hover);
+  border-color: var(--accent-blue-hover);
+  box-shadow: var(--shadow-glow-blue);
+  transform: translateY(-1px);
+}
+
+.ctaSecondary {
+  background-color: transparent;
+  color: var(--accent-blue);
+  border: 1px solid var(--accent-blue);
+}
+
+.ctaSecondary:hover {
+  background-color: var(--accent-blue-glow);
+  box-shadow: var(--shadow-glow-blue);
+  transform: translateY(-1px);
+}
+
+/* Use the global keyframes from animations.css */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .title {
+    font-size: var(--font-4xl);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .title {
+    font-size: var(--font-3xl);
+  }
+
+  .subtitle {
+    font-size: var(--font-base);
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero::before {
+    animation: none;
+  }
+
+  .title,
+  .subtitle,
+  .buttons {
+    animation: none;
+    opacity: 1;
+  }
+}
