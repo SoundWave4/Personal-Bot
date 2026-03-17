@@ -1,6 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { useLanguage } from '../../hooks/useLanguage';
-import { parseSSE } from '../../utils/parseSSE';
 
 const MAX_MESSAGES = 20;
 const WARN_THRESHOLD = 18;
@@ -61,7 +60,6 @@ export function useChat() {
   const clearError = useCallback(() => setError(null), []);
 
   const resetChat = useCallback(() => {
-    // Abort any in-flight request
     if (abortRef.current) {
       abortRef.current.abort();
       abortRef.current = null;
@@ -83,7 +81,6 @@ export function useChat() {
       setMessageCount(newCount);
       setStoredCount(newCount);
 
-      // Block after incrementing if we just hit the limit
       if (newCount > MAX_MESSAGES) return;
 
       // Create user message
@@ -94,16 +91,7 @@ export function useChat() {
         timestamp: new Date(),
       };
 
-      // Create placeholder assistant message for streaming
-      const assistantId = crypto.randomUUID?.() || (Date.now() + 1).toString();
-      const assistantMsg = {
-        id: assistantId,
-        role: 'assistant',
-        content: '',
-        timestamp: new Date(),
-      };
-
-      setMessages((prev) => [...prev, userMsg, assistantMsg]);
+      setMessages((prev) => [...prev, userMsg]);
       setIsStreaming(true);
       setError(null);
 
@@ -129,34 +117,25 @@ export function useChat() {
           let errMsg;
           try {
             const errData = await response.json();
-            errMsg = errData.error?.message || response.statusText;
+            errMsg = errData.error || response.statusText;
           } catch {
             errMsg = response.statusText;
           }
           throw new Error(errMsg);
         }
 
-        await parseSSE(
-          response,
-          (token) => {
-            setMessages((prev) => {
-              const updated = [...prev];
-              const idx = updated.findIndex((m) => m.id === assistantId);
-              if (idx !== -1) {
-                updated[idx] = {
-                  ...updated[idx],
-                  content: updated[idx].content + token,
-                };
-              }
-              return updated;
-            });
-          },
-          controller.signal
-        );
-      } catch (err) {
-        // Remove empty assistant placeholder on error
-        setMessages((prev) => prev.filter((m) => m.id !== assistantId || m.content));
+        const data = await response.json();
 
+        // Create assistant message from JSON response
+        const assistantMsg = {
+          id: crypto.randomUUID?.() || (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: data.content || '',
+          timestamp: new Date(),
+        };
+
+        setMessages((prev) => [...prev, assistantMsg]);
+      } catch (err) {
         if (err.name === 'AbortError') {
           setError(t('chat.networkError'));
         } else if (err.message === 'Failed to fetch' || err.message.includes('network')) {
