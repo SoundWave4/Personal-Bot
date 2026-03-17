@@ -1,0 +1,199 @@
+/* ChatbotDemo — marketing section with browser mockup */
+
+.section {
+  background-color: var(--bg-elevated);
+  padding: var(--space-section) var(--space-xl);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ---- Typography ---- */
+
+.title {
+  font-size: var(--font-4xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-md);
+}
+
+.subtitle {
+  font-size: var(--font-lg);
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.6;
+  margin: 0 0 var(--space-2xl);
+}
+
+/* ---- Browser Mockup ---- */
+
+.mockup {
+  width: 100%;
+  max-width: 520px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-2xl);
+}
+
+.mockupBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+}
+
+.dot[data-color='red'] {
+  background-color: #ef4444;
+}
+
+.dot[data-color='yellow'] {
+  background-color: #eab308;
+}
+
+.dot[data-color='green'] {
+  background-color: #22c55e;
+}
+
+.mockupBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-xl);
+  background-color: var(--bg-primary);
+  position: relative;
+  min-height: 220px;
+}
+
+.demoIcon {
+  color: var(--accent-blue);
+  margin-bottom: var(--space-md);
+}
+
+.mockupText {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  margin: 0 0 var(--space-lg);
+  max-width: 320px;
+  line-height: 1.5;
+}
+
+.tryButton {
+  padding: var(--space-sm) var(--space-xl);
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-hover));
+  color: var(--text-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition:
+    transform var(--duration-fast) var(--ease-default),
+    box-shadow var(--duration-fast) var(--ease-default);
+}
+
+.tryButton:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.arrow {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  opacity: 0.5;
+}
+
+/* ---- CTA ---- */
+
+.ctaText {
+  font-size: var(--font-lg);
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-lg);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-xl);
+  background-color: var(--accent-green);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-base);
+  font-weight: 600;
+  font-family: var(--font-family);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-default),
+    transform var(--duration-fast) var(--ease-default);
+}
+
+.ctaButton:hover {
+  background-color: var(--accent-green-hover);
+  transform: translateY(-1px);
+}
+
+/* ---- Tablet ---- */
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: var(--font-3xl);
+  }
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-3xl) var(--space-md);
+  }
+
+  .title {
+    font-size: var(--font-3xl);
+  }
+
+  .mockup {
+    max-width: 100%;
+  }
+
+  .ctaButton {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+/* ---- Reduced Motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  .tryButton,
+  .ctaButton {
+    transition: none;
+  }
+
+  .tryButton:hover,
+  .ctaButton:hover {
+    transform: none;
+  }
+}

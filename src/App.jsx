@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import CookieBanner from './components/CookieBanner/CookieBanner';
+import ChatWidget from './components/ChatWidget/ChatWidget';
 import HomePage from './pages/HomePage';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
@@ -20,6 +21,7 @@ function App() {
       </main>
       <Footer />
       <CookieBanner />
+      <ChatWidget />
     </>
   );
 }

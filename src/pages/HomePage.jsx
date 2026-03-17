@@ -2,6 +2,7 @@ import Hero from '../components/Hero/Hero';
 import Services from '../components/Services/Services';
 import HowItWorks from '../components/HowItWorks/HowItWorks';
 import About from '../components/About/About';
+import ChatbotDemo from '../components/ChatbotDemo/ChatbotDemo';
 import Contact from '../components/Contact/Contact';
 
 function HomePage() {
@@ -11,9 +12,7 @@ function HomePage() {
       <Services />
       <HowItWorks />
 
-      <section id="chatbot-demo">
-        {/* ChatbotDemo component — Task 5 */}
-      </section>
+      <ChatbotDemo />
 
       <About />
       <Contact />
