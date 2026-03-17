@@ -178,6 +178,7 @@ const translations = {
       chatbotCta: 'Oder fragen Sie direkt den Chatbot!',
       required: 'Pflichtfeld',
       invalidEmail: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+      divider: 'oder',
     },
 
     footer: {
@@ -380,6 +381,7 @@ const translations = {
       chatbotCta: 'Or ask the chatbot directly!',
       required: 'Required',
       invalidEmail: 'Please enter a valid email address.',
+      divider: 'or',
     },
 
     footer: {

@@ -36,12 +36,20 @@ export async function onRequestPost(context) {
       );
     }
 
+    // Check Web3Forms key is configured
+    if (!context.env.WEB3FORMS_KEY) {
+      return new Response(
+        JSON.stringify({ error: 'Contact service not configured' }),
+        { status: 503, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+      );
+    }
+
     // Forward to Web3Forms for email delivery
     const web3formsResponse = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        access_key: context.env.WEB3FORMS_KEY || 'YOUR_WEB3FORMS_KEY',
+        access_key: context.env.WEB3FORMS_KEY,
         subject: `Neue Kontaktanfrage von ${name.trim()}`,
         from_name: name.trim(),
         email: email.trim(),

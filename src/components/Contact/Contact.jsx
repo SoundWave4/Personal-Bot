@@ -122,7 +122,7 @@ function Contact() {
         {/* Chatbot CTA */}
         <div className={styles.divider}>
           <span className={styles.dividerLine} />
-          <span className={styles.dividerText}>oder / or</span>
+          <span className={styles.dividerText}>{t('contact.divider')}</span>
           <span className={styles.dividerLine} />
         </div>
 

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../../hooks/useLanguage';
 import styles from './Navbar.module.css';
@@ -22,8 +22,14 @@ function Navbar() {
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const [observedSection, setObservedSection] = useState('');
   const observerRef = useRef(null);
+
+  // Derive activeSection: empty string when not on home page
+  const activeSection = useMemo(
+    () => (isHome ? observedSection : ''),
+    [isHome, observedSection]
+  );
 
   // Scroll-aware background: add "scrolled" state after 50px
   useEffect(() => {
@@ -40,10 +46,7 @@ function Navbar() {
 
   // Active section tracking via IntersectionObserver (home page only)
   useEffect(() => {
-    if (!isHome) {
-      setActiveSection('');
-      return;
-    }
+    if (!isHome) return;
 
     // Disconnect previous observer
     if (observerRef.current) {
@@ -69,7 +72,7 @@ function Navbar() {
           }
         }
         if (bestEntry) {
-          setActiveSection(bestEntry.target.id);
+          setObservedSection(bestEntry.target.id);
         }
       },
       {
@@ -96,11 +99,6 @@ function Navbar() {
       document.body.style.overflow = '';
     };
   }, [mobileOpen]);
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [location.pathname]);
 
   const closeMobileMenu = useCallback(() => {
     setMobileOpen(false);

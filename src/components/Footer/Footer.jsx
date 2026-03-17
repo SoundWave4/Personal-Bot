@@ -84,7 +84,7 @@ function Footer() {
                   +49 176 43168374
                 </a>
               </li>
-              <li className={styles.contactItem}>Berlin, Deutschland</li>
+              <li className={styles.contactItem}>{t('footer.location')}</li>
             </ul>
           </div>
         </div>

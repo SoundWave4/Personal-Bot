@@ -32,17 +32,22 @@ function parseInlineMarkdown(text) {
           <strong key={`b-${lineIdx}-${match.index}`}>{match[2]}</strong>
         );
       } else if (match[3] && match[4]) {
-        // Link: [text](url)
-        elements.push(
-          <a
-            key={`a-${lineIdx}-${match.index}`}
-            href={match[4]}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {match[3]}
-          </a>
-        );
+        // Link: [text](url) — only allow http/https to prevent javascript: XSS
+        const url = match[4];
+        if (/^https?:\/\//.test(url)) {
+          elements.push(
+            <a
+              key={`a-${lineIdx}-${match.index}`}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {match[3]}
+            </a>
+          );
+        } else {
+          elements.push(match[0]);
+        }
       }
 
       lastIndex = match.index + match[0].length;

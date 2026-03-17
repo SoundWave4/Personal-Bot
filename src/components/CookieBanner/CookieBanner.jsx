@@ -1,22 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useLanguage } from '../../hooks/useLanguage';
 import styles from './CookieBanner.module.css';
 
 function CookieBanner() {
   const { t } = useLanguage();
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
+  const [visible, setVisible] = useState(() => {
     try {
-      const consent = localStorage.getItem('cookieConsent');
-      if (!consent) {
-        setVisible(true);
-      }
+      return !localStorage.getItem('cookieConsent');
     } catch {
-      // localStorage unavailable — show banner to be safe
-      setVisible(true);
+      return true;
     }
-  }, []);
+  });
 
   const handleAccept = () => {
     try {

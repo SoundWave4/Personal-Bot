@@ -52,6 +52,14 @@ export async function onRequestPost(context) {
   };
 
   try {
+    // Check API key is configured
+    if (!context.env.ANTHROPIC_API_KEY) {
+      return new Response(
+        JSON.stringify({ error: 'Chat service not configured' }),
+        { status: 503, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+      );
+    }
+
     // Parse and validate request body
     const body = await context.request.json();
 
