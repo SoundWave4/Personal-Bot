@@ -1,0 +1,238 @@
+/* Contact section — form with status feedback */
+
+.section {
+  background-color: var(--bg-secondary);
+  padding: var(--space-section) var(--space-xl);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.title {
+  font-size: var(--font-4xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 var(--space-md);
+}
+
+.subtitle {
+  font-size: var(--font-lg);
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0 0 var(--space-3xl);
+  line-height: 1.6;
+}
+
+/* ---- Form ---- */
+
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* ---- Field group ---- */
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: var(--font-base);
+  transition: border-color var(--duration-fast) var(--ease-default),
+    box-shadow var(--duration-fast) var(--ease-default);
+  box-sizing: border-box;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--accent-blue);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-blue-glow);
+}
+
+.inputError {
+  border-color: #ef4444;
+}
+
+.inputError:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.errorText {
+  font-size: var(--font-xs);
+  color: #ef4444;
+  margin-top: var(--space-xs);
+}
+
+/* ---- Submit button ---- */
+
+.submitBtn {
+  width: 100%;
+  padding: var(--space-sm) var(--space-xl);
+  background-color: var(--accent-blue);
+  color: var(--text-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: var(--font-base);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-default),
+    transform var(--duration-fast) var(--ease-default);
+}
+
+.submitBtn:hover:not(:disabled) {
+  background-color: var(--accent-blue-hover);
+  transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---- Status feedback ---- */
+
+.statusBox {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  text-align: center;
+  animation: fadeIn var(--duration-normal) var(--ease-default);
+}
+
+.statusSuccess {
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+}
+
+.statusError {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  color: #ef4444;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Chatbot CTA divider ---- */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-subtle);
+}
+
+.dividerText {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.chatbotCta {
+  display: block;
+  text-align: center;
+  margin-top: var(--space-lg);
+  font-size: var(--font-base);
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+.chatbotCta:hover {
+  color: var(--accent-blue-hover);
+  text-decoration: underline;
+}
+
+/* ---- Tablet ---- */
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: var(--font-3xl);
+  }
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-3xl) var(--space-md);
+  }
+
+  .title {
+    font-size: var(--font-3xl);
+  }
+
+  .subtitle {
+    font-size: var(--font-base);
+  }
+}
+
+/* ---- Reduced motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  .submitBtn {
+    transition: none;
+  }
+
+  .submitBtn:hover:not(:disabled) {
+    transform: none;
+  }
+
+  .statusBox {
+    animation: none;
+  }
+}

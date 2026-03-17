@@ -2,6 +2,7 @@ import Hero from '../components/Hero/Hero';
 import Services from '../components/Services/Services';
 import HowItWorks from '../components/HowItWorks/HowItWorks';
 import About from '../components/About/About';
+import Contact from '../components/Contact/Contact';
 
 function HomePage() {
   return (
@@ -15,10 +16,7 @@ function HomePage() {
       </section>
 
       <About />
-
-      <section id="contact">
-        {/* Contact component — Task 4 */}
-      </section>
+      <Contact />
     </>
   );
 }

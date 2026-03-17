@@ -191,6 +191,10 @@ const translations = {
       madeWith: 'Entwickelt mit React & Cloudflare',
     },
 
+    legal: {
+      backHome: '\u2190 Zur\u00fcck zur Startseite',
+    },
+
     cookie: {
       text: 'Diese Website verwendet nur technisch notwendige Cookies.',
       accept: 'Verstanden',
@@ -387,6 +391,10 @@ const translations = {
       copyright: '\u00A9 {year} Saba Gogia. All rights reserved.',
       location: 'Berlin, Germany',
       madeWith: 'Built with React & Cloudflare',
+    },
+
+    legal: {
+      backHome: '\u2190 Back to Home',
     },
 
     cookie: {
