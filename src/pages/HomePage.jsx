@@ -1,25 +1,20 @@
 import Hero from '../components/Hero/Hero';
+import Services from '../components/Services/Services';
+import HowItWorks from '../components/HowItWorks/HowItWorks';
+import About from '../components/About/About';
 
 function HomePage() {
   return (
     <>
       <Hero />
-
-      <section id="services">
-        {/* Services component — Task 3 */}
-      </section>
-
-      <section id="how-it-works">
-        {/* HowItWorks component — Task 3 */}
-      </section>
+      <Services />
+      <HowItWorks />
 
       <section id="chatbot-demo">
         {/* ChatbotDemo component — Task 5 */}
       </section>
 
-      <section id="about">
-        {/* About component — Task 3 */}
-      </section>
+      <About />
 
       <section id="contact">
         {/* Contact component — Task 4 */}

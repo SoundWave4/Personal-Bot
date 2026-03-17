@@ -1,0 +1,290 @@
+/* Services section — pricing cards, 3 service groups */
+
+.section {
+  background-color: var(--bg-primary);
+  padding: var(--space-section) var(--space-xl);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ---- Section header ---- */
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.title {
+  font-size: var(--font-4xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: var(--font-lg);
+  color: var(--text-secondary);
+  margin-top: var(--space-md);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* ---- Service groups ---- */
+
+.group {
+  margin-bottom: var(--space-3xl);
+}
+
+.group:last-child {
+  margin-bottom: 0;
+}
+
+.groupTitle {
+  font-size: var(--font-2xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-xl);
+  text-align: center;
+}
+
+/* ---- Grids ---- */
+
+.websiteGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.chatbotGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+}
+
+.redesignGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ---- Card ---- */
+
+.card {
+  position: relative;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform var(--duration-normal) var(--ease-default),
+    border-color var(--duration-normal) var(--ease-default),
+    box-shadow var(--duration-normal) var(--ease-default),
+    background-color var(--duration-normal) var(--ease-default);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-active);
+  box-shadow: var(--shadow-md);
+  background-color: var(--bg-card-hover);
+}
+
+/* Highlighted (Premium) variant */
+.cardHighlighted {
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.cardHighlighted:hover {
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-glow-blue), var(--shadow-md);
+}
+
+/* ---- Badge ---- */
+
+.badge {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background-color: var(--accent-blue);
+  color: var(--text-primary);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  line-height: 1;
+}
+
+/* ---- Card content ---- */
+
+.cardName {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-sm);
+}
+
+.cardPrice {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  color: var(--accent-blue);
+  margin: 0 0 var(--space-md);
+}
+
+.cardDescription {
+  font-size: var(--font-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 var(--space-lg);
+}
+
+/* ---- Feature list ---- */
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex: 1; /* push CTA to bottom */
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  color: var(--accent-green);
+  margin-top: 2px;
+}
+
+/* ---- CTA button ---- */
+
+.ctaButton {
+  display: block;
+  width: 100%;
+  padding: var(--space-sm) var(--space-xl);
+  background-color: var(--accent-blue);
+  color: var(--text-primary);
+  font-size: var(--font-base);
+  font-weight: 600;
+  font-family: var(--font-family);
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-default),
+    transform var(--duration-fast) var(--ease-default);
+}
+
+.ctaButton:hover {
+  background-color: var(--accent-blue-hover);
+  transform: translateY(-1px);
+}
+
+/* ---- Maintenance aside ---- */
+
+.maintenanceNote {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg) var(--space-xl);
+  background-color: var(--bg-elevated);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-sm) var(--space-lg);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.maintenanceName {
+  font-size: var(--font-base);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.maintenancePrice {
+  font-size: var(--font-base);
+  font-weight: 600;
+  color: var(--accent-blue);
+}
+
+.maintenanceDesc {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  flex-basis: 100%;
+}
+
+/* ---- Tablet ---- */
+
+@media (max-width: 1024px) {
+  .websiteGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title {
+    font-size: var(--font-3xl);
+  }
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-3xl) var(--space-md);
+  }
+
+  .title {
+    font-size: var(--font-3xl);
+  }
+
+  .websiteGrid,
+  .chatbotGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .maintenanceNote {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+}
+
+/* ---- Reduced motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .ctaButton {
+    transition: none;
+  }
+
+  .ctaButton:hover {
+    transform: none;
+  }
+}
