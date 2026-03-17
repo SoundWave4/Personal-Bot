@@ -3,6 +3,8 @@
 .section {
   background-color: var(--bg-primary);
   padding: var(--space-section) var(--space-xl);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
 }
 
 .container {

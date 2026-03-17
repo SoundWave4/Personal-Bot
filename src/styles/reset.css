@@ -68,6 +68,12 @@ ol {
   list-style: none;
 }
 
+/* Visible focus indicators for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
 #root {
   isolation: isolate;
 }

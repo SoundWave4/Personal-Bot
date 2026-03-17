@@ -4,18 +4,32 @@ import HowItWorks from '../components/HowItWorks/HowItWorks';
 import About from '../components/About/About';
 import ChatbotDemo from '../components/ChatbotDemo/ChatbotDemo';
 import Contact from '../components/Contact/Contact';
+import AnimateOnScroll from '../components/AnimateOnScroll';
 
 function HomePage() {
   return (
     <>
       <Hero />
-      <Services />
-      <HowItWorks />
 
-      <ChatbotDemo />
+      <AnimateOnScroll>
+        <Services />
+      </AnimateOnScroll>
 
-      <About />
-      <Contact />
+      <AnimateOnScroll>
+        <HowItWorks />
+      </AnimateOnScroll>
+
+      <AnimateOnScroll>
+        <ChatbotDemo />
+      </AnimateOnScroll>
+
+      <AnimateOnScroll>
+        <About />
+      </AnimateOnScroll>
+
+      <AnimateOnScroll>
+        <Contact />
+      </AnimateOnScroll>
     </>
   );
 }
