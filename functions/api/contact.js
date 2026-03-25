@@ -36,11 +36,11 @@ export async function onRequestPost(context) {
       );
     }
 
-    // Check Web3Forms key is configured
-    const web3Key = context.env.WEB3FORMS_KEY;
+    // Check Web3Forms key is configured (handle possible trailing space in env var name)
+    const web3Key = context.env.WEB3FORMS_KEY || context.env['WEB3FORMS_KEY '];
     if (!web3Key) {
       return new Response(
-        JSON.stringify({ error: 'Contact service not configured', debug: Object.keys(context.env).join(',') }),
+        JSON.stringify({ error: 'Contact service not configured' }),
         { status: 503, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
       );
     }

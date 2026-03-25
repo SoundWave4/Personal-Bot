@@ -276,12 +276,13 @@ export async function onRequestPost(context) {
     if (toolUseBlock) {
       let emailSent = false;
 
-      if (context.env.WEB3FORMS_KEY) {
+      const web3Key = context.env.WEB3FORMS_KEY || context.env['WEB3FORMS_KEY '];
+      if (web3Key) {
         const conversationLog = formatConversationLog(trimmedMessages);
         emailSent = await sendBookingEmail(
           toolUseBlock.input,
           conversationLog,
-          context.env.WEB3FORMS_KEY
+          web3Key
         );
       }
 
