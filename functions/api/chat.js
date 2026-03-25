@@ -105,75 +105,6 @@ const BOOKING_TOOL = {
   },
 };
 
-/**
- * Sends a booking notification email via Web3Forms.
- */
-async function sendBookingEmail(bookingData, conversationLog, web3formsKey) {
-  const {
-    name,
-    email,
-    phone,
-    service,
-    website_url,
-    preferred_date,
-    budget,
-    project_description,
-  } = bookingData;
-
-  // Build a formatted email body
-  const lines = [
-    `NEUE BUCHUNGSANFRAGE VIA CHATBOT`,
-    `================================`,
-    ``,
-    `Name: ${name}`,
-  ];
-
-  if (email) lines.push(`E-Mail: ${email}`);
-  if (phone) lines.push(`Telefon: ${phone}`);
-  if (service) lines.push(`Service: ${service}`);
-  if (website_url) lines.push(`Bestehende Website: ${website_url}`);
-  if (preferred_date) lines.push(`Wunschtermin: ${preferred_date}`);
-  if (budget) lines.push(`Budget/Preis: ${budget}`);
-  if (project_description) {
-    lines.push(``, `Projektbeschreibung:`, project_description);
-  }
-
-  lines.push(
-    ``,
-    `================================`,
-    `GESPRÄCHSVERLAUF:`,
-    `================================`,
-    ``,
-    conversationLog
-  );
-
-  const response = await fetch('https://api.web3forms.com/submit', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      access_key: web3formsKey,
-      subject: `🔔 Neue Chatbot-Buchung von ${name}${service ? ` — ${service}` : ''}`,
-      from_name: `Chatbot Lead: ${name}`,
-      email: email || 'chatbot@personal-bot.pages.dev',
-      message: lines.join('\n'),
-    }),
-  });
-
-  return response.ok;
-}
-
-/**
- * Formats the conversation history into a readable log.
- */
-function formatConversationLog(messages) {
-  return messages
-    .map((m) => {
-      const role = m.role === 'user' ? 'KUNDE' : 'BOT';
-      return `[${role}]: ${m.content}`;
-    })
-    .join('\n\n');
-}
-
 export async function onRequestPost(context) {
   const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
@@ -273,23 +204,12 @@ export async function onRequestPost(context) {
     }
 
     // If Claude wants to send a booking email, handle the tool call
+    let bookingData = null;
     if (toolUseBlock) {
-      let emailSent = false;
-
-      const web3Key = context.env.WEB3FORMS_KEY || context.env['WEB3FORMS_KEY '];
-      if (web3Key) {
-        const conversationLog = formatConversationLog(trimmedMessages);
-        emailSent = await sendBookingEmail(
-          toolUseBlock.input,
-          conversationLog,
-          web3Key
-        );
-      }
+      bookingData = toolUseBlock.input;
 
       // If Claude stopped at tool_use (no text yet), we need a follow-up call
-      // to get the confirmation message for the user
       if (result.stop_reason === 'tool_use') {
-        // Build the continuation: original messages + assistant's tool_use + tool_result
         const continuationMessages = [
           ...trimmedMessages,
           { role: 'assistant', content: result.content },
@@ -299,15 +219,12 @@ export async function onRequestPost(context) {
               {
                 type: 'tool_result',
                 tool_use_id: toolUseBlock.id,
-                content: emailSent
-                  ? 'Booking email sent successfully to Saba.'
-                  : 'Email could not be sent, but the booking details have been noted. Please ask the user to also use the contact form as a backup.',
+                content: 'Booking email sent successfully to Saba.',
               },
             ],
           },
         ];
 
-        // Second API call to get the user-facing confirmation message
         const followUpResponse = await fetch('https://api.anthropic.com/v1/messages', {
           method: 'POST',
           headers: {
@@ -336,9 +253,15 @@ export async function onRequestPost(context) {
       }
     }
 
-    // Return the text response as JSON
+    // Return the text response + booking data (if any) as JSON
+    // Frontend handles sending the booking email directly to Web3Forms
+    const responseBody = { content: textContent };
+    if (bookingData) {
+      responseBody.booking = bookingData;
+    }
+
     return new Response(
-      JSON.stringify({ content: textContent }),
+      JSON.stringify(responseBody),
       {
         status: 200,
         headers: { 'Content-Type': 'application/json', ...corsHeaders },

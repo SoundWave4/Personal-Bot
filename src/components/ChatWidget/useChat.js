@@ -5,6 +5,7 @@ const MAX_MESSAGES = 20;
 const WARN_THRESHOLD = 18;
 const TIMEOUT_MS = 30000;
 const SESSION_KEY = 'chatMessageCount';
+const WEB3FORMS_KEY = '6985bdb5-8ed7-4617-9978-a3c38d8a6632';
 
 function getStoredCount() {
   try {
@@ -125,6 +126,45 @@ export function useChat() {
         }
 
         const data = await response.json();
+
+        // If backend detected a booking, send the email from the frontend
+        if (data.booking) {
+          const allMsgs = [...messages.filter((m) => m.id !== 'greeting'), userMsg];
+          const log = allMsgs.map((m) => `[${m.role === 'user' ? 'KUNDE' : 'BOT'}]: ${m.content}`).join('\n\n');
+          const b = data.booking;
+          const lines = [
+            'NEUE BUCHUNGSANFRAGE VIA CHATBOT',
+            '================================',
+            '',
+            `Name: ${b.name}`,
+            b.email ? `E-Mail: ${b.email}` : '',
+            b.phone ? `Telefon: ${b.phone}` : '',
+            b.service ? `Service: ${b.service}` : '',
+            b.website_url ? `Website: ${b.website_url}` : '',
+            b.preferred_date ? `Wunschtermin: ${b.preferred_date}` : '',
+            b.budget ? `Budget: ${b.budget}` : '',
+            b.project_description ? `\nProjektbeschreibung:\n${b.project_description}` : '',
+            '',
+            '================================',
+            'GESPRACHSVERLAUF:',
+            '================================',
+            '',
+            log,
+          ].filter(Boolean).join('\n');
+
+          // Fire and forget — don't block the UI
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              access_key: WEB3FORMS_KEY,
+              subject: `Neue Chatbot-Buchung von ${b.name}${b.service ? ` - ${b.service}` : ''}`,
+              from_name: `Chatbot Lead: ${b.name}`,
+              email: b.email || 'chatbot@personal-bot.pages.dev',
+              message: lines,
+            }),
+          }).catch(() => {}); // silently fail
+        }
 
         // Create assistant message from JSON response
         const assistantMsg = {

@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MIN_MESSAGE_LENGTH = 10;
+const WEB3FORMS_KEY = '6985bdb5-8ed7-4617-9978-a3c38d8a6632';
 
 /**
  * Contact form hook — manages form state, validation, and submission.
@@ -74,14 +75,23 @@ export function useContactForm(t) {
       setStatus('submitting');
 
       try {
-        const response = await fetch('/api/contact', {
+        // Honeypot check — if filled, silently "succeed"
+        if (formData.website) {
+          setStatus('success');
+          setTimeout(resetForm, 3000);
+          return;
+        }
+
+        // Submit directly to Web3Forms (Cloudflare Pages blocks server-to-server requests)
+        const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            name: formData.name.trim(),
+            access_key: WEB3FORMS_KEY,
+            subject: `Neue Kontaktanfrage von ${formData.name.trim()}`,
+            from_name: formData.name.trim(),
             email: formData.email.trim(),
             message: formData.message.trim(),
-            website: formData.website, // honeypot value
           }),
         });
 
