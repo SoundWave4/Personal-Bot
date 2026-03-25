@@ -58,10 +58,10 @@ export async function onRequestPost(context) {
       }),
     });
 
-    if (!web3formsResponse.ok) {
-      console.error('Web3Forms error:', await web3formsResponse.text());
+    const w3result = await web3formsResponse.json().catch(() => null);
+    if (!web3formsResponse.ok || !w3result?.success) {
       return new Response(
-        JSON.stringify({ error: 'Failed to send message' }),
+        JSON.stringify({ error: 'Failed to send message', w3: w3result }),
         { status: 502, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
       );
     }
