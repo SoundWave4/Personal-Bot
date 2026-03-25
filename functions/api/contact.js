@@ -50,12 +50,11 @@ export async function onRequestPost(context) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        access_key: web3Key,
+        access_key: web3Key.trim(),
         subject: `Neue Kontaktanfrage von ${name.trim()}`,
         from_name: name.trim(),
         email: email.trim(),
         message: message.trim(),
-        to: 'sabagogia11@gmail.com',
       }),
     });
 
@@ -74,7 +73,7 @@ export async function onRequestPost(context) {
   } catch (error) {
     console.error('Contact function error:', error);
     return new Response(
-      JSON.stringify({ error: 'Internal server error' }),
+      JSON.stringify({ error: 'Internal server error', detail: error.message }),
       { status: 500, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
     );
   }
