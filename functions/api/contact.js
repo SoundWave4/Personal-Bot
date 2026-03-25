@@ -58,10 +58,12 @@ export async function onRequestPost(context) {
       }),
     });
 
-    const w3result = await web3formsResponse.json().catch(() => null);
+    const w3text = await web3formsResponse.text();
+    let w3result;
+    try { w3result = JSON.parse(w3text); } catch { w3result = null; }
     if (!web3formsResponse.ok || !w3result?.success) {
       return new Response(
-        JSON.stringify({ error: 'Failed to send message', w3: w3result }),
+        JSON.stringify({ error: 'Failed to send message', status: web3formsResponse.status, body: w3text.slice(0, 500) }),
         { status: 502, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
       );
     }
