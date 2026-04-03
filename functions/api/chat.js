@@ -184,7 +184,7 @@ export async function onRequestPost(context) {
       const errorText = await apiResponse.text();
       console.error('Anthropic API error:', apiResponse.status, errorText);
       return new Response(
-        JSON.stringify({ error: 'AI service temporarily unavailable', debug_status: apiResponse.status, debug_body: errorText.slice(0, 500) }),
+        JSON.stringify({ error: 'AI service temporarily unavailable' }),
         { status: 502, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
       );
     }
