@@ -12,7 +12,7 @@ function Footer() {
         <div className={styles.columns}>
           {/* Column 1: Brand */}
           <div>
-            <h3 className={styles.brandName}>Saba Gogia</h3>
+            <h3 className={styles.brandName}>Gogia</h3>
             <p className={styles.tagline}>{t('footer.madeWith')}</p>
             <p className={styles.location}>
               <svg

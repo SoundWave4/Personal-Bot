@@ -208,7 +208,7 @@ const translations = {
 
     about: {
       title: 'Über mich',
-      bio: 'Ich bin Saba, ein freiberuflicher Webentwickler aus Berlin. Ich helfe kleinen und mittelständischen Unternehmen dabei, mit professionellen Websites und KI-Chatbots online sichtbar zu werden und ihre Kunden besser zu erreichen.',
+      bio: 'Ich bin Gogia, ein freiberuflicher Webentwickler und KI-Spezialist aus Berlin. Ich helfe kleinen und mittelständischen Unternehmen dabei, mit professionellen Websites, KI-Chatbots und Automatisierungslösungen online sichtbar zu werden und ihre Kunden besser zu erreichen.',
       skills: ['React', 'JavaScript', 'Node.js', 'KI-Integration', 'DSGVO-Compliance', 'Responsive Design'],
       location: 'Berlin, Deutschland',
       portfolioLabel: 'Portfolio',
@@ -240,7 +240,7 @@ const translations = {
       contact: 'Kontakt',
       impressum: 'Impressum',
       datenschutz: 'Datenschutz',
-      copyright: '\u00A9 {year} Saba Gogia. Alle Rechte vorbehalten.',
+      copyright: '\u00A9 {year} Gogia. Alle Rechte vorbehalten.',
       location: 'Berlin, Deutschland',
       madeWith: 'Entwickelt mit React & Cloudflare',
     },
@@ -464,7 +464,7 @@ const translations = {
 
     about: {
       title: 'About Me',
-      bio: 'I\'m Saba, a freelance web developer based in Berlin. I help small and medium-sized businesses become visible online with professional websites and AI chatbots, reaching their customers more effectively.',
+      bio: 'I\'m Gogia, a freelance web developer and AI specialist based in Berlin. I help small and medium-sized businesses become visible online with professional websites, AI chatbots, and automation solutions, reaching their customers more effectively.',
       skills: ['React', 'JavaScript', 'Node.js', 'AI Integration', 'GDPR Compliance', 'Responsive Design'],
       location: 'Berlin, Germany',
       portfolioLabel: 'Portfolio',
@@ -496,7 +496,7 @@ const translations = {
       contact: 'Contact',
       impressum: 'Imprint',
       datenschutz: 'Privacy Policy',
-      copyright: '\u00A9 {year} Saba Gogia. All rights reserved.',
+      copyright: '\u00A9 {year} Gogia. All rights reserved.',
       location: 'Berlin, Germany',
       madeWith: 'Built with React & Cloudflare',
     },
