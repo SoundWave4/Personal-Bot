@@ -170,6 +170,15 @@ const translations = {
       },
     },
 
+    trustBar: {
+      stats: [
+        { value: '24/7', label: 'KI-Support' },
+        { value: 'DSGVO', label: 'Konform' },
+        { value: '< 5 Min', label: 'Reaktionszeit' },
+        { value: 'Berlin', label: 'Made in Germany' },
+      ],
+    },
+
     howItWorks: {
       title: 'So funktioniert\'s',
       subtitle: 'In drei einfachen Schritten zu Ihrer neuen Website oder Ihrem KI-Chatbot.',
@@ -213,6 +222,19 @@ const translations = {
       location: 'Berlin, Deutschland',
       portfolioLabel: 'Portfolio',
       portfolioCta: 'Portfolio ansehen',
+    },
+
+    faq: {
+      title: 'Häufige Fragen',
+      subtitle: 'Antworten auf die wichtigsten Fragen zu unseren Leistungen.',
+      items: [
+        { q: 'Wie lange dauert es, eine Website zu erstellen?', a: 'Eine einfache Landingpage ist in 5 Werktagen fertig. Business-Websites mit mehreren Seiten dauern 1-2 Wochen, je nach Umfang. Sie bekommen regelmäßige Updates während der Entwicklung.' },
+        { q: 'Was kostet ein KI-Chatbot?', a: 'Ein FAQ-Chatbot startet ab 500 €, ein intelligenter KI-Assistent mit Terminbuchung und Lead-Erfassung ab 1.500 €. Die monatliche Wartung beginnt ab 100 €/Monat.' },
+        { q: 'Was ist ein KI-Rezeptionist?', a: 'Ein KI-Sprachassistent, der Anrufe für Ihr Unternehmen entgegennimmt — rund um die Uhr. Er beantwortet Fragen, bucht Termine und filtert Spam. Sie verpassen keinen Anruf mehr.' },
+        { q: 'Was bedeutet Speed-to-Lead?', a: 'Wenn jemand auf Ihrer Website ein Formular ausfüllt, ruft unsere KI diese Person innerhalb von 5 Minuten automatisch zurück. Studien zeigen: Das erhöht die Abschlussrate um bis zu 100x.' },
+        { q: 'Sind die Websites DSGVO-konform?', a: 'Ja, immer. Jede Website bekommt ein Cookie-Banner, eine Datenschutzerklärung und ein Impressum. Alle Chatbots verarbeiten Daten DSGVO-konform.' },
+        { q: 'Bieten Sie eine kostenlose Erstberatung an?', a: 'Ja! Schreiben Sie mir einfach oder chatten Sie direkt mit dem KI-Assistenten auf dieser Website. Er kann auch gleich einen Beratungstermin für Sie vereinbaren.' },
+      ],
     },
 
     contact: {
@@ -426,6 +448,15 @@ const translations = {
       },
     },
 
+    trustBar: {
+      stats: [
+        { value: '24/7', label: 'AI Support' },
+        { value: 'GDPR', label: 'Compliant' },
+        { value: '< 5 Min', label: 'Response Time' },
+        { value: 'Berlin', label: 'Made in Germany' },
+      ],
+    },
+
     howItWorks: {
       title: 'How It Works',
       subtitle: 'Three simple steps to your new website or AI chatbot.',
@@ -469,6 +500,19 @@ const translations = {
       location: 'Berlin, Germany',
       portfolioLabel: 'Portfolio',
       portfolioCta: 'View Portfolio',
+    },
+
+    faq: {
+      title: 'Frequently Asked Questions',
+      subtitle: 'Answers to the most common questions about our services.',
+      items: [
+        { q: 'How long does it take to build a website?', a: 'A simple landing page is ready in 5 business days. Business websites with multiple pages take 1-2 weeks, depending on scope. You get regular updates during development.' },
+        { q: 'What does an AI chatbot cost?', a: 'An FAQ chatbot starts from \u20AC500, an intelligent AI assistant with appointment booking and lead capture from \u20AC1,500. Monthly maintenance starts from \u20AC100/month.' },
+        { q: 'What is an AI receptionist?', a: 'An AI voice assistant that answers calls for your business around the clock. It answers questions, books appointments, and filters spam. You never miss a call again.' },
+        { q: 'What does Speed-to-Lead mean?', a: 'When someone fills out a form on your website, our AI calls them back automatically within 5 minutes. Studies show this increases conversion rates by up to 100x.' },
+        { q: 'Are the websites GDPR-compliant?', a: 'Yes, always. Every website includes a cookie banner, privacy policy, and legal notice. All chatbots process data in full GDPR compliance.' },
+        { q: 'Do you offer a free consultation?', a: 'Yes! Just write to me or chat directly with the AI assistant on this website. It can also schedule a consultation appointment for you right away.' },
+      ],
     },
 
     contact: {
