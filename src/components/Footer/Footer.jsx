@@ -73,10 +73,10 @@ function Footer() {
             <ul className={styles.contactList}>
               <li className={styles.contactItem}>
                 <a
-                  href="mailto:sabagogia11@gmail.com"
+                  href="mailto:sabagogia98@gmail.com"
                   className={styles.contactLink}
                 >
-                  sabagogia11@gmail.com
+                  sabagogia98@gmail.com
                 </a>
               </li>
               <li className={styles.contactItem}>

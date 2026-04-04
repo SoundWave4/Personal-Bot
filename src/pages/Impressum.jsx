@@ -33,8 +33,8 @@ function Impressum() {
         </p>
         <p className={styles.text}>
           E-Mail:{' '}
-          <a href="mailto:sabagogia11@gmail.com" className={styles.link}>
-            sabagogia11@gmail.com
+          <a href="mailto:sabagogia98@gmail.com" className={styles.link}>
+            sabagogia98@gmail.com
           </a>
         </p>
 

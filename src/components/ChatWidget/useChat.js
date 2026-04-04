@@ -5,7 +5,7 @@ const MAX_MESSAGES = 20;
 const WARN_THRESHOLD = 18;
 const TIMEOUT_MS = 30000;
 const SESSION_KEY = 'chatMessageCount';
-const WEB3FORMS_KEY = '6985bdb5-8ed7-4617-9978-a3c38d8a6632';
+const WEB3FORMS_KEY = 'c41be729-6157-484b-a675-a564e507cd16';
 
 function getStoredCount() {
   try {

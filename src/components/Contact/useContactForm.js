@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MIN_MESSAGE_LENGTH = 10;
-const WEB3FORMS_KEY = '6985bdb5-8ed7-4617-9978-a3c38d8a6632';
+const WEB3FORMS_KEY = 'c41be729-6157-484b-a675-a564e507cd16';
 
 /**
  * Contact form hook — manages form state, validation, and submission.

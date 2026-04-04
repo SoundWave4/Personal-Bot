@@ -66,7 +66,7 @@ Wenn jemand einen Termin buchen möchte, Interesse an einem Service zeigt, oder 
 
 Sobald du genügend Informationen hast (mindestens Name und eine Kontaktmöglichkeit), nutze das Tool "send_booking_email" um die Anfrage weiterzuleiten. Du brauchst nicht ALLE Felder — Name + Kontakt + Service reichen aus. Bestätige dem Nutzer danach, dass die Anfrage eingegangen ist und sich Saba schnellstmöglich melden wird.
 
-Wenn du etwas nicht weißt, sage ehrlich, dass du es nicht weißt, und schlage vor, direkt Kontakt aufzunehmen über das Kontaktformular oder per E-Mail an sabagogia11@gmail.com.`;
+Wenn du etwas nicht weißt, sage ehrlich, dass du es nicht weißt, und schlage vor, direkt Kontakt aufzunehmen über das Kontaktformular oder per E-Mail an sabagogia98@gmail.com.`;
 
 const BOOKING_TOOL = {
   name: 'send_booking_email',
