@@ -65,6 +65,9 @@ function Services() {
   // Chatbot tiers
   const chatbotTiers = ['faq', 'assistant'];
 
+  // Automation tiers
+  const automationTiers = ['receptionist', 'reactivation', 'speedToLead'];
+
   return (
     <section id="services" className={styles.section}>
       <div className={styles.container}>
@@ -133,6 +136,38 @@ function Services() {
             </span>
             <span className={styles.maintenanceDesc}>
               {t('services.chatbot.maintenance.description')}
+            </span>
+          </div>
+        </div>
+
+        {/* Group 4: KI-Automatisierung */}
+        <div className={styles.group}>
+          <h3 className={styles.groupTitle}>{t('services.automation.title')}</h3>
+          <div className={styles.websiteGrid}>
+            {automationTiers.map((tier) => (
+              <ServiceCard
+                key={tier}
+                name={t(`services.automation.${tier}.name`)}
+                price={t(`services.automation.${tier}.price`)}
+                description={t(`services.automation.${tier}.description`)}
+                features={t(`services.automation.${tier}.features`)}
+                cta={t(`services.automation.${tier}.cta`)}
+                badge={tier === 'reactivation' ? t('services.automation.reactivation.badge') : null}
+                highlighted={tier === 'reactivation'}
+              />
+            ))}
+          </div>
+
+          {/* Retainer aside */}
+          <div className={styles.maintenanceNote}>
+            <span className={styles.maintenanceName}>
+              {t('services.automation.retainer.name')}
+            </span>
+            <span className={styles.maintenancePrice}>
+              {t('services.automation.retainer.price')}
+            </span>
+            <span className={styles.maintenanceDesc}>
+              {t('services.automation.retainer.description')}
             </span>
           </div>
         </div>

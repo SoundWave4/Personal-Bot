@@ -37,6 +37,12 @@ KI-CHATBOT:
 - KI-Assistent (ab 1.500 €): Intelligenter Assistent mit Terminbuchung, Lead-Erfassung, CRM-Anbindung, mehrsprachig
 - Monatliche Wartung & Updates: ab 50 €/Monat
 
+KI-AUTOMATISIERUNG (NEU):
+- KI-Rezeptionist (ab 1.800 €): KI-Sprachassistent, der Anrufe 24/7 entgegennimmt, Fragen beantwortet, Termine bucht und Spam filtert. Kein verpasster Anruf mehr.
+- Lead-Reaktivierung (ab 2.700 €): KI kontaktiert alte Leads automatisch per E-Mail, SMS oder Telefon und bringt sie zurück in die Pipeline. Performance-basierte Abrechnung möglich.
+- Speed-to-Lead (ab 2.700 €): Neue Leads werden innerhalb von 5 Minuten automatisch angerufen — bevor sie zur Konkurrenz gehen. Bis zu 100x höhere Conversion-Rate.
+- Monatliche Betreuung: ab 450 €/Monat für Optimierung, Monitoring und Wartung
+
 ALLGEMEINE INFOS:
 - Standort: Berlin, arbeitet remote deutschlandweit
 - Alle Websites sind DSGVO-konform (Datenschutz, Cookie-Banner, Impressum)

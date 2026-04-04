@@ -115,6 +115,59 @@ const translations = {
           description: 'Laufende Pflege, Updates und Optimierung Ihres Chatbots.',
         },
       },
+
+      automation: {
+        title: 'KI-Automatisierung',
+
+        receptionist: {
+          name: 'KI-Rezeptionist',
+          price: 'ab 1.800 €',
+          description: 'Ein KI-Sprachassistent, der Anrufe 24/7 entgegennimmt, Fragen beantwortet und Termine bucht.',
+          features: [
+            'Anrufe beantworten — rund um die Uhr',
+            'Automatische Terminbuchung im Kalender',
+            'Fragen zum Unternehmen beantworten',
+            'Spam-Anrufe filtern & Anrufe weiterleiten',
+            'Kein verpasster Lead mehr',
+          ],
+          cta: 'KI-Rezeptionist anfragen',
+        },
+
+        reactivation: {
+          name: 'Lead-Reaktivierung',
+          price: 'ab 2.700 €',
+          description: 'KI kontaktiert Ihre alten Leads automatisch per E-Mail, SMS oder Telefon — und bringt sie zurück.',
+          features: [
+            'Bestehende Kontaktliste aktivieren',
+            'Automatische Kontaktaufnahme per E-Mail/SMS/Telefon',
+            'Personalisierte Ansprache durch KI',
+            'Termine buchen & Pipeline füllen',
+            'Performance-basierte Abrechnung möglich',
+          ],
+          cta: 'Lead-Reaktivierung anfragen',
+          badge: 'Neu',
+        },
+
+        speedToLead: {
+          name: 'Speed-to-Lead',
+          price: 'ab 2.700 €',
+          description: 'Neue Leads werden innerhalb von 5 Minuten automatisch angerufen — bevor sie zur Konkurrenz gehen.',
+          features: [
+            'Automatischer Rückruf in unter 5 Minuten',
+            'Lead-Qualifizierung durch KI',
+            'Direkte Terminbuchung im Kalender',
+            'Integration mit Ihren Werbekampagnen',
+            'Bis zu 100x höhere Conversion-Rate',
+          ],
+          cta: 'Speed-to-Lead anfragen',
+        },
+
+        retainer: {
+          name: 'Monatliche Betreuung',
+          price: 'ab 450 €/Monat',
+          description: 'Laufende Optimierung, Monitoring und Wartung Ihrer KI-Automatisierung.',
+        },
+      },
     },
 
     howItWorks: {
@@ -316,6 +369,59 @@ const translations = {
           name: 'Monthly Maintenance',
           price: 'from \u20AC50/month',
           description: 'Ongoing maintenance, updates, and optimization of your chatbot.',
+        },
+      },
+
+      automation: {
+        title: 'AI Automation',
+
+        receptionist: {
+          name: 'AI Receptionist',
+          price: 'from \u20AC1,800',
+          description: 'An AI voice assistant that answers calls 24/7, answers questions, and books appointments.',
+          features: [
+            'Answer calls — around the clock',
+            'Automatic appointment booking to calendar',
+            'Answer questions about your business',
+            'Filter spam calls & transfer when needed',
+            'Never miss a lead again',
+          ],
+          cta: 'Request AI Receptionist',
+        },
+
+        reactivation: {
+          name: 'Lead Reactivation',
+          price: 'from \u20AC2,700',
+          description: 'AI contacts your old leads automatically via email, SMS, or phone — and brings them back.',
+          features: [
+            'Activate your existing contact list',
+            'Automatic outreach via email/SMS/phone',
+            'Personalized messaging powered by AI',
+            'Book appointments & fill your pipeline',
+            'Performance-based pricing available',
+          ],
+          cta: 'Request Lead Reactivation',
+          badge: 'New',
+        },
+
+        speedToLead: {
+          name: 'Speed-to-Lead',
+          price: 'from \u20AC2,700',
+          description: 'New leads get called back automatically within 5 minutes — before they go to your competitor.',
+          features: [
+            'Automatic callback in under 5 minutes',
+            'AI-powered lead qualification',
+            'Direct appointment booking to calendar',
+            'Integration with your ad campaigns',
+            'Up to 100x higher conversion rate',
+          ],
+          cta: 'Request Speed-to-Lead',
+        },
+
+        retainer: {
+          name: 'Monthly Support',
+          price: 'from \u20AC450/month',
+          description: 'Ongoing optimization, monitoring, and maintenance of your AI automation.',
         },
       },
     },
