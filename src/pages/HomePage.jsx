@@ -1,6 +1,7 @@
 import Hero from '../components/Hero/Hero';
 import TrustBar from '../components/TrustBar/TrustBar';
 import Services from '../components/Services/Services';
+import Comparison from '../components/Comparison/Comparison';
 import HowItWorks from '../components/HowItWorks/HowItWorks';
 import ChatbotDemo from '../components/ChatbotDemo/ChatbotDemo';
 import FAQ from '../components/FAQ/FAQ';
@@ -16,6 +17,10 @@ function HomePage() {
 
       <AnimateOnScroll>
         <Services />
+      </AnimateOnScroll>
+
+      <AnimateOnScroll>
+        <Comparison />
       </AnimateOnScroll>
 
       <AnimateOnScroll>

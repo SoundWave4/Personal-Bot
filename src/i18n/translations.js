@@ -224,6 +224,21 @@ const translations = {
       portfolioCta: 'Portfolio ansehen',
     },
 
+    comparison: {
+      title: 'Traditionell vs. KI',
+      subtitle: 'Sehen Sie selbst, was KI-Automatisierung für Ihr Unternehmen bedeutet.',
+      traditional: 'Traditionell',
+      ai: 'Mit KI',
+      rows: [
+        { feature: 'Erreichbarkeit', traditional: 'Mo-Fr, 9-17 Uhr', ai: '24/7, auch Feiertage' },
+        { feature: 'Reaktionszeit', traditional: 'Stunden bis Tage', ai: 'Unter 5 Minuten' },
+        { feature: 'Verpasste Anrufe', traditional: '30-50% außerhalb der Öffnungszeiten', ai: '0% — kein Anruf geht verloren' },
+        { feature: 'Kosten pro Monat', traditional: '2.000-3.000 € (Gehalt)', ai: 'Ab 450 €/Monat' },
+        { feature: 'Skalierbarkeit', traditional: 'Mehr Personal = mehr Kosten', ai: 'Unbegrenzt, gleiche Kosten' },
+        { feature: 'Krankheit / Urlaub', traditional: 'Ausfall oder Vertretung nötig', ai: 'Kein Ausfall, nie krank' },
+      ],
+    },
+
     faq: {
       title: 'Häufige Fragen',
       subtitle: 'Antworten auf die wichtigsten Fragen zu unseren Leistungen.',
@@ -500,6 +515,21 @@ const translations = {
       location: 'Berlin, Germany',
       portfolioLabel: 'Portfolio',
       portfolioCta: 'View Portfolio',
+    },
+
+    comparison: {
+      title: 'Traditional vs. AI',
+      subtitle: 'See for yourself what AI automation means for your business.',
+      traditional: 'Traditional',
+      ai: 'With AI',
+      rows: [
+        { feature: 'Availability', traditional: 'Mon-Fri, 9am-5pm', ai: '24/7, including holidays' },
+        { feature: 'Response Time', traditional: 'Hours to days', ai: 'Under 5 minutes' },
+        { feature: 'Missed Calls', traditional: '30-50% outside business hours', ai: '0% — no call goes unanswered' },
+        { feature: 'Monthly Cost', traditional: '\u20AC2,000-3,000 (salary)', ai: 'From \u20AC450/month' },
+        { feature: 'Scalability', traditional: 'More staff = more costs', ai: 'Unlimited, same cost' },
+        { feature: 'Sick Days / Vacation', traditional: 'Downtime or replacement needed', ai: 'No downtime, never sick' },
+      ],
     },
 
     faq: {
