@@ -111,7 +111,7 @@ const translations = {
 
         maintenance: {
           name: 'Monatliche Wartung',
-          price: 'ab 50 €/Monat',
+          price: 'ab 100 €/Monat',
           description: 'Laufende Pflege, Updates und Optimierung Ihres Chatbots.',
         },
       },
@@ -367,7 +367,7 @@ const translations = {
 
         maintenance: {
           name: 'Monthly Maintenance',
-          price: 'from \u20AC50/month',
+          price: 'from \u20AC100/month',
           description: 'Ongoing maintenance, updates, and optimization of your chatbot.',
         },
       },

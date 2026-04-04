@@ -35,7 +35,7 @@ WEBSITE REDESIGN:
 KI-CHATBOT:
 - FAQ-Chatbot (ab 500 €): Beantwortet häufige Kundenfragen automatisch, individuelle Wissensbasis, DSGVO-konform
 - KI-Assistent (ab 1.500 €): Intelligenter Assistent mit Terminbuchung, Lead-Erfassung, CRM-Anbindung, mehrsprachig
-- Monatliche Wartung & Updates: ab 50 €/Monat
+- Monatliche Wartung & Updates: ab 100 €/Monat
 
 KI-AUTOMATISIERUNG (NEU):
 - KI-Rezeptionist (ab 1.800 €): KI-Sprachassistent, der Anrufe 24/7 entgegennimmt, Fragen beantwortet, Termine bucht und Spam filtert. Kein verpasster Anruf mehr.
