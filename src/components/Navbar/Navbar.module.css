@@ -32,7 +32,7 @@
 }
 
 .logo:hover {
-  color: var(--accent-blue);
+  color: var(--accent-primary);
   transition: color var(--duration-fast) var(--ease-default);
 }
 
@@ -61,7 +61,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent-blue);
+  background: var(--accent-primary);
   transition: width var(--duration-normal) var(--ease-default);
 }
 
@@ -74,7 +74,7 @@
 }
 
 .navLinkActive {
-  color: var(--accent-blue);
+  color: var(--accent-primary);
 }
 
 .navLinkActive::after {
@@ -109,8 +109,8 @@
 }
 
 .langActive {
-  background: var(--accent-blue);
-  color: var(--text-primary);
+  background: var(--accent-primary);
+  color: var(--text-inverse);
 }
 
 /* Hamburger button (mobile) */
@@ -194,11 +194,11 @@
 }
 
 .mobileNavLink:hover {
-  color: var(--accent-blue);
+  color: var(--accent-primary);
 }
 
 .mobileNavLinkActive {
-  color: var(--accent-blue);
+  color: var(--accent-primary);
 }
 
 /* Responsive */

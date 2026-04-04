@@ -18,8 +18,8 @@ main {
   position: absolute;
   top: -40px;
   left: 0;
-  background: var(--accent-blue);
-  color: var(--text-primary);
+  background: var(--accent-primary);
+  color: var(--text-inverse);
   padding: var(--space-sm) var(--space-md);
   z-index: 10000;
   transition: top 0.3s;

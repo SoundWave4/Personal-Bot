@@ -56,23 +56,23 @@ h6 {
 }
 
 a {
-  color: var(--accent-blue);
+  color: var(--accent-primary);
   transition: color var(--duration-fast) var(--ease-default);
 }
 
 a:hover {
-  color: var(--accent-blue-hover);
+  color: var(--accent-primary-hover);
 }
 
 a:focus-visible {
-  outline: 2px solid var(--accent-blue);
+  outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
 
 ::selection {
-  background-color: var(--accent-blue);
-  color: var(--text-primary);
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
 }
 
 /* Responsive heading scales */

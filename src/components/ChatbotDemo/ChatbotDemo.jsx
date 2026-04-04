@@ -36,14 +36,14 @@ function PointingArrow() {
     >
       <path
         d="M12 12 C 24 20, 36 32, 52 52"
-        stroke="var(--accent-blue)"
+        stroke="var(--accent-primary)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeDasharray="4 4"
       />
       <path
         d="M44 50 L52 52 L50 44"
-        stroke="var(--accent-blue)"
+        stroke="var(--accent-primary)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

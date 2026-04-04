@@ -153,9 +153,9 @@ function Navbar() {
         to="/"
         className={styles.logo}
         onClick={handleLogoClick}
-        aria-label="Saba Gogia — Home"
+        aria-label="Gogia — Home"
       >
-        Saba Gogia
+        Gogia
       </Link>
 
       {/* Desktop nav links + lang toggle */}

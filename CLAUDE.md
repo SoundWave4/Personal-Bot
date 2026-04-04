@@ -52,11 +52,25 @@ The site doubles as a **portfolio/marketing site** and a **live chatbot demo** f
 - **Datenschutzerklarung** required (DSGVO) — data collection, cookies, chatbot data, hosting
 - **Cookie Banner** — at minimum: "Diese Website verwendet nur technisch notwendige Cookies."
 
+## Deployment
+
+- **Live URL**: https://personal-bot.pages.dev
+- **Platform**: Cloudflare Pages (Settings → Workers & Pages → Pages)
+- **GitHub Repo**: SoundWave4/Personal-Bot (auto-deploys on push to main)
+- **Build command**: `npm run build`
+- **Build output directory**: `dist`
+- **Contact form service**: Web3Forms (https://web3forms.com) — free email forwarding to sabagogia11@gmail.com
+
 ## Environment Variables
 
+Set in Cloudflare Pages dashboard → Settings → Variables and Secrets:
+
 ```
-ANTHROPIC_API_KEY=sk-ant-...  # Set in Cloudflare Pages dashboard (Production AND Preview)
+ANTHROPIC_API_KEY=sk-ant-...  # Claude API key (from console.anthropic.com)
+WEB3FORMS_KEY=...             # Web3Forms access key (from web3forms.com)
 ```
+
+After changing env vars, must **retry deployment** for them to take effect.
 
 ## File Structure (planned)
 

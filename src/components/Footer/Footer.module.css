@@ -1,8 +1,8 @@
 /* Footer — 3-column layout with brand, links, and contact info */
 
 .footer {
-  background-color: var(--bg-secondary);
-  border-top: 1px solid var(--border-subtle);
+  background-color: var(--bg-footer);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: var(--space-3xl) var(--space-xl);
 }
 
@@ -21,7 +21,7 @@
 .columnHeader {
   font-size: var(--font-sm);
   font-weight: 700;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0 0 var(--space-md) 0;
@@ -31,19 +31,19 @@
 .brandName {
   font-size: var(--font-xl);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-inverse);
   margin: 0 0 var(--space-sm) 0;
 }
 
 .tagline {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   font-size: var(--font-sm);
   margin: 0 0 var(--space-sm) 0;
   line-height: 1.5;
 }
 
 .location {
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.5);
   font-size: var(--font-sm);
   margin: 0;
   display: flex;
@@ -76,14 +76,14 @@
 }
 
 .footerLink {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: var(--font-sm);
   transition: color var(--duration-fast) var(--ease-default);
 }
 
 .footerLink:hover {
-  color: var(--accent-blue);
+  color: var(--accent-secondary);
 }
 
 /* Contact column */
@@ -97,31 +97,31 @@
 }
 
 .contactItem {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   font-size: var(--font-sm);
   line-height: 1.5;
 }
 
 .contactLink {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: color var(--duration-fast) var(--ease-default);
 }
 
 .contactLink:hover {
-  color: var(--accent-blue);
+  color: var(--accent-secondary);
 }
 
 /* Bottom bar */
 .bottomBar {
   margin-top: var(--space-2xl);
   padding-top: var(--space-lg);
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   text-align: center;
 }
 
 .copyright {
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.4);
   font-size: var(--font-sm);
   margin: 0;
 }

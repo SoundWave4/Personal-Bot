@@ -84,7 +84,7 @@
 }
 
 .demoIcon {
-  color: var(--accent-blue);
+  color: var(--accent-primary);
   margin-bottom: var(--space-md);
 }
 
@@ -98,8 +98,8 @@
 
 .tryButton {
   padding: var(--space-sm) var(--space-xl);
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-hover));
-  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-primary-hover));
+  color: var(--text-inverse);
   border: none;
   border-radius: var(--radius-md);
   font-size: var(--font-sm);
@@ -113,7 +113,7 @@
 
 .tryButton:hover {
   transform: translateY(-1px);
-  box-shadow: var(--shadow-glow-blue);
+  box-shadow: var(--shadow-glow-primary);
 }
 
 .arrow {
@@ -138,7 +138,7 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-sm) var(--space-xl);
-  background-color: var(--accent-green);
+  background-color: var(--accent-secondary);
   color: var(--text-inverse);
   border: none;
   border-radius: var(--radius-md);
@@ -153,7 +153,7 @@
 }
 
 .ctaButton:hover {
-  background-color: var(--accent-green-hover);
+  background-color: var(--accent-secondary-hover);
   transform: translateY(-1px);
 }
 

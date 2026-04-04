@@ -1,27 +1,28 @@
 :root {
-  /* Backgrounds */
-  --bg-primary: #0A0E17;
-  --bg-secondary: #0F1420;
-  --bg-card: #151B2B;
-  --bg-card-hover: #1A2035;
-  --bg-elevated: #1E2538;
+  /* Backgrounds — warm cream light theme */
+  --bg-primary: #FFFCF7;
+  --bg-secondary: #F5EDE4;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F9F5F0;
+  --bg-elevated: #F0E8DF;
+  --bg-footer: #1A2E23;
 
-  /* Accents */
-  --accent-blue: #3B82F6;
-  --accent-blue-hover: #2563EB;
-  --accent-blue-glow: rgba(59, 130, 246, 0.15);
-  --accent-green: #10B981;
-  --accent-green-hover: #059669;
+  /* Accents — forest green + warm caramel */
+  --accent-primary: #1B5E3B;
+  --accent-primary-hover: #14532D;
+  --accent-primary-glow: rgba(27, 94, 59, 0.12);
+  --accent-secondary: #D4A574;
+  --accent-secondary-hover: #C4905E;
 
-  /* Text */
-  --text-primary: #F5F3EF;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
-  --text-inverse: #0A0E17;
+  /* Text — warm charcoal on light backgrounds */
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B6B6B;
+  --text-muted: #9A9A9A;
+  --text-inverse: #FFFCF7;
 
   /* Borders */
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-active: rgba(59, 130, 246, 0.4);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-active: rgba(27, 94, 59, 0.3);
 
   /* Typography */
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -56,11 +57,11 @@
   --radius-xl: 24px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
-  --shadow-glow-blue: 0 0 20px rgba(59, 130, 246, 0.3);
+  /* Shadows — warm and soft */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-glow-primary: 0 0 20px rgba(27, 94, 59, 0.15);
 
   /* Transitions */
   --ease-default: cubic-bezier(0.4, 0, 0.2, 1);

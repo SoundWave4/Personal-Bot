@@ -74,9 +74,9 @@
 
 .input:focus,
 .textarea:focus {
-  border-color: var(--accent-blue);
+  border-color: var(--accent-primary);
   outline: none;
-  box-shadow: 0 0 0 3px var(--accent-blue-glow);
+  box-shadow: 0 0 0 3px var(--accent-primary-glow);
 }
 
 .inputError {
@@ -104,8 +104,8 @@
 .submitBtn {
   width: 100%;
   padding: var(--space-sm) var(--space-xl);
-  background-color: var(--accent-blue);
-  color: var(--text-primary);
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
   border: none;
   border-radius: var(--radius-md);
   font-family: var(--font-family);
@@ -117,7 +117,7 @@
 }
 
 .submitBtn:hover:not(:disabled) {
-  background-color: var(--accent-blue-hover);
+  background-color: var(--accent-primary-hover);
   transform: translateY(-1px);
 }
 
@@ -138,8 +138,8 @@
 
 .statusSuccess {
   background-color: rgba(16, 185, 129, 0.1);
-  border: 1px solid var(--accent-green);
-  color: var(--accent-green);
+  border: 1px solid var(--accent-secondary);
+  color: var(--accent-secondary);
 }
 
 .statusError {
@@ -188,14 +188,14 @@
   text-align: center;
   margin-top: var(--space-lg);
   font-size: var(--font-base);
-  color: var(--accent-blue);
+  color: var(--accent-primary);
   text-decoration: none;
   font-weight: 500;
   transition: color var(--duration-fast) var(--ease-default);
 }
 
 .chatbotCta:hover {
-  color: var(--accent-blue-hover);
+  color: var(--accent-primary-hover);
   text-decoration: underline;
 }
 

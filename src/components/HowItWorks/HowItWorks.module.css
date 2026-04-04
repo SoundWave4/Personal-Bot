@@ -68,7 +68,7 @@
   width: 48px;
   height: 48px;
   border-radius: var(--radius-full);
-  background-color: var(--accent-blue);
+  background-color: var(--accent-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,7 +77,7 @@
 .circleNumber {
   font-size: var(--font-xl);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-inverse);
   line-height: 1;
 }
 
@@ -103,7 +103,7 @@
 }
 
 .icon {
-  color: var(--accent-blue);
+  color: var(--accent-primary);
   display: flex;
   align-items: center;
   justify-content: center;
