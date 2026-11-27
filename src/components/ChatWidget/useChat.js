@@ -128,6 +128,9 @@ export function useChat() {
         const data = await response.json();
 
         // If backend detected a booking, send the email from the frontend
+        // and wait for the result, so the visitor only sees a confirmation
+        // once the email has actually been accepted by Web3Forms.
+        let bookingFailed = false;
         if (data.booking) {
           const allMsgs = [...messages.filter((m) => m.id !== 'greeting'), userMsg];
           const log = allMsgs.map((m) => `[${m.role === 'user' ? 'KUNDE' : 'BOT'}]: ${m.content}`).join('\n\n');
@@ -152,25 +155,30 @@ export function useChat() {
             log,
           ].filter(Boolean).join('\n');
 
-          // Fire and forget — don't block the UI
-          fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              access_key: WEB3FORMS_KEY,
-              subject: `Neue Chatbot-Buchung von ${b.name}${b.service ? ` - ${b.service}` : ''}`,
-              from_name: `Chatbot Lead: ${b.name}`,
-              email: b.email || 'chatbot@personal-bot.pages.dev',
-              message: lines,
-            }),
-          }).catch(() => {}); // silently fail
+          try {
+            const bookingResponse = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                access_key: WEB3FORMS_KEY,
+                subject: `Neue Chatbot-Buchung von ${b.name}${b.service ? ` - ${b.service}` : ''}`,
+                from_name: `Chatbot Lead: ${b.name}`,
+                email: b.email || 'chatbot@personal-bot.pages.dev',
+                message: lines,
+              }),
+            });
+            const bookingResult = await bookingResponse.json().catch(() => null);
+            bookingFailed = !bookingResponse.ok || !bookingResult?.success;
+          } catch {
+            bookingFailed = true;
+          }
         }
 
         // Create assistant message from JSON response
         const assistantMsg = {
           id: crypto.randomUUID?.() || (Date.now() + 1).toString(),
           role: 'assistant',
-          content: data.content || '',
+          content: bookingFailed ? t('chat.bookingFailed') : data.content || '',
           timestamp: new Date(),
         };
 

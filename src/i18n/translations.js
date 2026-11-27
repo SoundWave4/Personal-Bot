@@ -213,6 +213,7 @@ const translations = {
       rateLimitWarning: 'Noch {count} Nachrichten übrig.',
       error: 'Entschuldigung, es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.',
       networkError: 'Netzwerkfehler. Bitte überprüfen Sie Ihre Internetverbindung.',
+      bookingFailed: 'Leider konnte Ihre Anfrage gerade nicht übermittelt werden. Bitte nutzen Sie das Kontaktformular unten oder schreiben Sie direkt an sabagogia98@gmail.com.',
     },
 
     about: {
@@ -506,6 +507,7 @@ const translations = {
       rateLimitWarning: '{count} messages remaining.',
       error: 'Sorry, an error occurred. Please try again.',
       networkError: 'Network error. Please check your internet connection.',
+      bookingFailed: 'Sorry, your request could not be sent right now. Please use the contact form below or email sabagogia98@gmail.com directly.',
     },
 
     about: {

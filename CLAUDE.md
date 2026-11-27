@@ -12,7 +12,7 @@ The site doubles as a **portfolio/marketing site** and a **live chatbot demo** f
 ## Tech Stack
 
 - **Frontend**: React + Vite
-- **Chatbot API**: Claude API (Anthropic) — model `claude-sonnet-4-20250514`
+- **Chatbot API**: Claude API (Anthropic) — model `claude-sonnet-5-5` with effort `low` (switched 2026-11-27 after `claude-sonnet-4-20250514` was retired)
 - **Backend**: Cloudflare Workers as API proxy (keeps API key server-side)
 - **Hosting**: Cloudflare Pages + Cloudflare Pages Functions
 - **Language**: Bilingual — German (DE) and English (EN) with localStorage-persisted toggle
@@ -21,9 +21,10 @@ The site doubles as a **portfolio/marketing site** and a **live chatbot demo** f
 
 - All static text uses a `translations` object keyed by `de`/`en`
 - Chatbot auto-detects language from user input (no toggle needed)
-- API key is NEVER exposed to the frontend — Cloudflare Worker proxies all Claude API calls
+- API key stays server-side — Cloudflare Worker proxies all Claude API calls
 - Streaming responses for chatbot UX
 - Rate limiting: ~20 messages per session to prevent API abuse
+- Booking emails: the chat waits for Web3Forms to confirm before showing the bot's confirmation; if sending fails, the visitor sees `chat.bookingFailed` and is pointed to the contact form
 - Conversation history maintained in frontend, sent with each request
 
 ## Design System
@@ -134,6 +135,12 @@ git push origin main
 - **Phone**: +49 176 43168374
 - **Email**: sabagogia11@gmail.com
 - **Portfolio**: samplevault.win
+
+## Writing Tone for .md Files
+- When creating or updating any .md file, write in a calm, clear tone
+- Frame rules as positive guidance — say what to do, not what to fear
+- Avoid all-caps warnings (NEVER, STOP, CRITICAL) — use clear language instead
+- Calm instructions produce better agent work
 
 ## Coding Conventions
 

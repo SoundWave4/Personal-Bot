@@ -95,7 +95,9 @@ export function useContactForm(t) {
           }),
         });
 
-        if (response.ok) {
+        // Web3Forms can answer 200 with success: false, so check the body too
+        const result = await response.json().catch(() => null);
+        if (response.ok && result?.success) {
           setStatus('success');
           setTimeout(() => {
             resetForm();

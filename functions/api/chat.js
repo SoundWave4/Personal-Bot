@@ -68,6 +68,9 @@ Sobald du genügend Informationen hast (mindestens Name und eine Kontaktmöglich
 
 Wenn du etwas nicht weißt, sage ehrlich, dass du es nicht weißt, und schlage vor, direkt Kontakt aufzunehmen über das Kontaktformular oder per E-Mail an sabagogia98@gmail.com.`;
 
+// Claude model used for the chat. claude-sonnet-4-20250514 was retired on 2026-06-15.
+const MODEL = 'claude-sonnet-5-5';
+
 const BOOKING_TOOL = {
   name: 'send_booking_email',
   description: 'Sends a booking/lead email to Saba when a potential client wants to book a consultation or shows interest in a service. Call this once you have collected at least the name and one contact method (email or phone) from the user.',
@@ -177,8 +180,10 @@ export async function onRequestPost(context) {
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1024,
+        model: MODEL,
+        max_tokens: 2048,
+        // Low effort keeps replies fast for a chat widget (thinking counts toward max_tokens)
+        output_config: { effort: 'low' },
         system: SYSTEM_PROMPT,
         messages: trimmedMessages,
         tools: [BOOKING_TOOL],
@@ -225,7 +230,7 @@ export async function onRequestPost(context) {
               {
                 type: 'tool_result',
                 tool_use_id: toolUseBlock.id,
-                content: 'Booking email sent successfully to Saba.',
+                content: 'Booking details recorded. The website will now forward them to Saba by email.',
               },
             ],
           },
@@ -239,8 +244,9 @@ export async function onRequestPost(context) {
             'anthropic-version': '2023-06-01',
           },
           body: JSON.stringify({
-            model: 'claude-sonnet-4-20250514',
-            max_tokens: 500,
+            model: MODEL,
+            max_tokens: 1024,
+            output_config: { effort: 'low' },
             system: SYSTEM_PROMPT,
             messages: continuationMessages,
             tools: [BOOKING_TOOL],
